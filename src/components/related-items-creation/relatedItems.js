@@ -1,7 +1,7 @@
-import React from 'react';
-import apiMaster from '../../apiMaster';
-import ProductCard from './productCard';
-import YourOutfit from './yourOutfit';
+import React from "react";
+import apiMaster from "../../apiMaster";
+import ProductCard from "./productCard";
+import YourOutfit from "./yourOutfit";
 
 class RelatedItems extends React.Component {
   constructor(props) {
@@ -22,9 +22,6 @@ class RelatedItems extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.currentProductID !== prevProps.currentProductID) {
-      // console.log('apiMaster: ', apiMaster);
-      // console.log('this.props: ', this.props);
-      // console.log('componentDidUpdate for RelatedItems ran!');
       this.getRelatedIds();
     }
   }
@@ -43,7 +40,7 @@ class RelatedItems extends React.Component {
         this.getRelatedItemRatings();
       })
       .catch((err) => {
-        console.log('err in getRelatedIds: ', err);
+        console.log(err);
       });
   }
 

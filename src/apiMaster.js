@@ -63,8 +63,6 @@ const getCart = (userToken) => {
 };
 
 const addToCart = (user_token, sku_id) => {
-  console.log(user_token);
-  console.log(sku_id);
   return axios.post(`${url}/cart/`, {
     user_token: user_token,
     sku_id: sku_id,

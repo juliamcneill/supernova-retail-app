@@ -1,7 +1,7 @@
-import React from 'react';
-import apiMaster from '../../apiMaster';
-import { AiFillStar } from 'react-icons/ai';
-import ProductCompareModal from './productCompareModal';
+import React from "react";
+import apiMaster from "../../apiMaster";
+import { AiFillStar } from "react-icons/ai";
+import ProductCompareModal from "./productCompareModal";
 
 class CardActionButton extends React.Component {
   constructor(props) {
@@ -19,7 +19,6 @@ class CardActionButton extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.currentProductName !== prevProps.currentProductName) {
-      // console.log('componentDidUpdate in cardActionButton ran!');
       this.createCharacteristics();
     }
   }
@@ -30,27 +29,18 @@ class CardActionButton extends React.Component {
   }
 
   createCharacteristics() {
-    // console.log('createCharacteristics ran!');
     let combinedFeatures = [];
     let featureProductFeatures = [];
     let relatedProductFeatures = [];
-    // console.log(
-    //   'this.props.currentProductFeatures: ',
-    //   this.props.currentProductFeatures
-    // );
-    // console.log(
-    //   'this.props.relatedProductFeatures',
-    //   this.props.relatedProductFeatures
-    // );
     for (let i = 0; i < this.props.currentProductFeatures.length; i++) {
       let valueText, featureText;
-      if (this.props.currentProductFeatures[i].value === 'null') {
-        valueText = '';
+      if (this.props.currentProductFeatures[i].value === "null") {
+        valueText = "";
       } else {
-        valueText = this.props.currentProductFeatures[i].value + ' ';
+        valueText = this.props.currentProductFeatures[i].value + " ";
       }
-      if (this.props.currentProductFeatures[i].feature === 'null') {
-        featureText = '';
+      if (this.props.currentProductFeatures[i].feature === "null") {
+        featureText = "";
       } else {
         featureText = this.props.currentProductFeatures[i].feature;
       }
@@ -59,13 +49,13 @@ class CardActionButton extends React.Component {
     }
     for (let i = 0; i < this.props.relatedProductFeatures.length; i++) {
       let valueText, featureText;
-      if (this.props.relatedProductFeatures[i].value === 'null') {
-        valueText = '';
+      if (this.props.relatedProductFeatures[i].value === "null") {
+        valueText = "";
       } else {
-        valueText = this.props.relatedProductFeatures[i].value + ' ';
+        valueText = this.props.relatedProductFeatures[i].value + " ";
       }
-      if (this.props.relatedProductFeatures[i].feature === 'null') {
-        featureText = '';
+      if (this.props.relatedProductFeatures[i].feature === "null") {
+        featureText = "";
       } else {
         featureText = this.props.relatedProductFeatures[i].feature;
       }

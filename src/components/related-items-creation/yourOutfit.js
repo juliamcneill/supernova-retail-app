@@ -1,13 +1,13 @@
-import React from 'react';
-import apiMaster from '../../apiMaster';
-import CardStars from './cardStars';
-import ItemsCarousel from 'react-items-carousel';
+import React from "react";
+import apiMaster from "../../apiMaster";
+import CardStars from "./cardStars";
+import ItemsCarousel from "react-items-carousel";
 import {
   FaRegArrowAltCircleLeft,
   FaRegArrowAltCircleRight,
-} from 'react-icons/fa';
-import { AiOutlinePlus, AiOutlineClose } from 'react-icons/ai';
-import Cookies from 'universal-cookie';
+} from "react-icons/fa";
+import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
+import Cookies from "universal-cookie";
 
 class YourOutfit extends React.Component {
   constructor(props) {
@@ -48,11 +48,11 @@ class YourOutfit extends React.Component {
   async generateOutfitCookie() {
     const cookies = new Cookies();
     let storedIds = [];
-    if (cookies.get('outfit') === undefined) {
+    if (cookies.get("outfit") === undefined) {
       let outfitIds = [];
-      cookies.set('outfit', outfitIds);
+      cookies.set("outfit", outfitIds);
     } else {
-      storedIds = cookies.get('outfit');
+      storedIds = cookies.get("outfit");
     }
 
     await this.setState({
@@ -68,20 +68,20 @@ class YourOutfit extends React.Component {
 
   addOutfitToCookie(id) {
     const cookies = new Cookies();
-    let oldArray = cookies.get('outfit');
+    let oldArray = cookies.get("outfit");
     if (!oldArray.includes(id)) {
       let newArray = oldArray.slice();
       newArray.push(id);
-      cookies.set('outfit', newArray);
+      cookies.set("outfit", newArray);
     }
   }
 
   deleteOutfitFromCookie(index) {
     const cookies = new Cookies();
-    let oldArray = cookies.get('outfit');
+    let oldArray = cookies.get("outfit");
     let newArray = oldArray.slice();
     newArray.splice(index, 1);
-    cookies.set('outfit', newArray);
+    cookies.set("outfit", newArray);
     this.resetLoadedState();
     this.generateOutfitCookie(); // sets state with new list of ids
   }
@@ -94,7 +94,6 @@ class YourOutfit extends React.Component {
   }
 
   getCardImages() {
-    console.log('getCardImages ran!');
     let promises = [];
     for (let i = 0; i < this.state.favoriteOutfits.length; i++) {
       promises.push(
@@ -103,7 +102,7 @@ class YourOutfit extends React.Component {
           .then(
             (res) =>
               res.data.results[0].photos[0].thumbnail_url ||
-              'https://images.unsplash.com/photo-1529088148495-2d9f231db829?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80'
+              "https://images.unsplash.com/photo-1529088148495-2d9f231db829?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
           )
       );
     }
@@ -121,7 +120,6 @@ class YourOutfit extends React.Component {
   }
 
   getCardPrices() {
-    console.log('getCardPrices ran!');
     let promises = [];
     for (let i = 0; i < this.state.favoriteOutfits.length; i++) {
       promises.push(
@@ -183,7 +181,7 @@ class YourOutfit extends React.Component {
             <ItemsCarousel
               infiniteLoop={false}
               gutter={20}
-              activePosition={'center'}
+              activePosition={"center"}
               chevronWidth={60}
               disableSwipe={false}
               alwaysShowChevns={false}
@@ -228,25 +226,25 @@ class YourOutfit extends React.Component {
                       </div>
                       <span
                         className={
-                          this.state.cardPrices[i].sale_price === '0'
-                            ? 'discounted-price-hidden'
-                            : ''
+                          this.state.cardPrices[i].sale_price === "0"
+                            ? "discounted-price-hidden"
+                            : ""
                         }
                         style={
                           ({
                             textDecoration:
-                              this.state.cardPrices[i].sale_price !== '0'
-                                ? 'line-through'
-                                : 'none',
+                              this.state.cardPrices[i].sale_price !== "0"
+                                ? "line-through"
+                                : "none",
                           },
-                          { color: 'red' })
+                          { color: "red" })
                         }
                       >
                         {Number(
                           this.state.cardPrices[i].sale_price
-                        ).toLocaleString('en-US', {
-                          style: 'currency',
-                          currency: 'USD',
+                        ).toLocaleString("en-US", {
+                          style: "currency",
+                          currency: "USD",
                           minimumFractionDigits: 0,
                           maximumFractionDigits: 0,
                         })}
@@ -255,16 +253,16 @@ class YourOutfit extends React.Component {
                         className="main-price-display"
                         style={{
                           textDecoration:
-                            this.state.cardPrices[i].sale_price !== '0'
-                              ? 'line-through'
-                              : 'none',
+                            this.state.cardPrices[i].sale_price !== "0"
+                              ? "line-through"
+                              : "none",
                         }}
                       >
                         {Number(
                           this.state.cardPrices[i].original_price
-                        ).toLocaleString('en-US', {
-                          style: 'currency',
-                          currency: 'USD',
+                        ).toLocaleString("en-US", {
+                          style: "currency",
+                          currency: "USD",
                           minimumFractionDigits: 0,
                           maximumFractionDigits: 0,
                         })}

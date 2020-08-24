@@ -67,9 +67,6 @@ class NewReview extends React.Component {
           photos,
           characteristics
         )
-        .then(({ data }) => {
-          console.log("the review was posted successfully!", data);
-        })
         .catch((err) => {
           console.error(err);
         });
@@ -102,14 +99,9 @@ class NewReview extends React.Component {
 
   toggleImgModal(e, images) {
     if (images && images.length > 0) {
-      this.setState(
-        {
-          photos: images,
-        },
-        () => {
-          console.log(this.state.photos);
-        }
-      );
+      this.setState({
+        photos: images,
+      });
     }
     let temp = this.state.showImgModal;
     this.setState({
