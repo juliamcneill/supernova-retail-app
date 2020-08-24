@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import { searchState } from './qa-atoms';
-import { useRecoilState } from 'recoil';
+import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import { searchState } from "./qa-atoms";
+import { useRecoilState } from "recoil";
 
 const SearchQuestion = (props) => {
   const [search, setSearch] = useRecoilState(searchState);
 
   return (
-    <Form.Group controlId="search">
+    <Form.Group controlId="search-form">
       <Form.Control
         type="search"
         name="search"
