@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import SearchQuestion from './searchQuestion';
-import QuestionDisplay from './questionDisplay';
-import AskQuestionModal from './questionForm.js';
-import AddAnswerModal from './addAnswerModal.js';
-import Button from 'react-bootstrap/Button';
-import MoreQuestions from './moreQuestions';
+import React, { useState } from "react";
+import SearchQuestion from "./searchQuestion";
+import QuestionDisplay from "./questionDisplay";
+import AskQuestionModal from "./questionForm.js";
+import AddAnswerModal from "./addAnswerModal.js";
+import Button from "react-bootstrap/Button";
+import MoreQuestions from "./moreQuestions";
 
 const QuestionsAndAnswers = (props) => {
   const [AddQuestionModal, setAddQuestionModal] = useState(false);
@@ -44,6 +44,7 @@ const QuestionsAndAnswers = (props) => {
         <Button
           variant="success"
           className="qa-button"
+          tabindex="0"
           onClick={() => {
             setAddQuestionModal(true);
           }}

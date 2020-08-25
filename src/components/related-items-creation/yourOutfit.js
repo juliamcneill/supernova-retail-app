@@ -171,6 +171,7 @@ class YourOutfit extends React.Component {
         <div className="your-outfit-container">
           <div
             className="add-outfit-base-card"
+            tabindex="0"
             onClick={() => {
               this.addToOutfit();
             }}
@@ -194,8 +195,12 @@ class YourOutfit extends React.Component {
               requestToChangeActive={(value) =>
                 this.setState({ activeItemIndex: value })
               }
-              rightChevron={<FaRegArrowAltCircleRight color="#525252" />}
-              leftChevron={<FaRegArrowAltCircleLeft color="#525252" />}
+              rightChevron={
+                <FaRegArrowAltCircleRight color="#525252" tabindex="0" />
+              }
+              leftChevron={
+                <FaRegArrowAltCircleLeft color="#525252" tabindex="0" />
+              }
             >
               {this.state.cardDetails.map((card, i) => {
                 return (
@@ -208,6 +213,7 @@ class YourOutfit extends React.Component {
                       />
                       <AiOutlineClose
                         className="action-button-outfit"
+                        tabindex="0"
                         onClick={() => {
                           this.deleteOutfitFromCookie(i);
                         }}

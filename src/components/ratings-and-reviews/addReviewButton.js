@@ -21,6 +21,7 @@ class AddReviewButton extends React.Component {
       <>
         <button
           className="main-action-button review-button inline-display"
+          tabindex="0"
           onClick={(e) => this.showModal()}
         >
           Add New Review

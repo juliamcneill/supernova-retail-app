@@ -66,6 +66,7 @@ const Answer = (props) => {
             variant="primary"
             className="qa-button"
             size="sm"
+            tabindex="0"
             onClick={() => {
               setShowMore(false);
               setshowCollapse(true);
@@ -85,6 +86,7 @@ const Answer = (props) => {
             variant="primary"
             className="qa-button"
             size="sm"
+            tabindex="0"
             onClick={() => {
               setShowMore(true);
               setshowCollapse(false);

@@ -13,8 +13,10 @@ const SearchQuestion = (props) => {
         type="search"
         name="search"
         placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS..."
+        title="Search for questions"
         maxLength={60}
         value={search}
+        tabindex="0"
         onChange={(e) => {
           setSearch(e.target.value);
         }}

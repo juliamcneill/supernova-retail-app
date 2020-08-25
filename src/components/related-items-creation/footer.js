@@ -1,10 +1,10 @@
-import React from 'react';
-import Modal from 'react-bootstrap/Modal';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import { AiOutlineCopyright } from 'react-icons/ai';
+import React from "react";
+import Modal from "react-bootstrap/Modal";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import { AiOutlineCopyright } from "react-icons/ai";
 
 class Footer extends React.Component {
   constructor(props) {
@@ -18,16 +18,16 @@ class Footer extends React.Component {
     let formattedTime;
     // format ms
     if (duration < 1000) {
-      formattedTime = Math.round(duration) + 'ms';
+      formattedTime = Math.round(duration) + "ms";
     } else if (duration < 60000) {
       // format and convert to s
-      formattedTime = Math.round(duration / 1000) + 's';
+      formattedTime = Math.round(duration / 1000) + "s";
     } else if (duration < 3600000) {
       // format and convert to mins
-      formattedTime = (duration / 60000).toFixed(1) + 'm';
+      formattedTime = (duration / 60000).toFixed(1) + "m";
     } else {
       // format and convert to hours
-      formattedTime = (duration / 3600000).toFixed(1) + 'h';
+      formattedTime = (duration / 3600000).toFixed(1) + "h";
     }
     return formattedTime;
   }
@@ -86,6 +86,7 @@ class Footer extends React.Component {
         <div>
           <span
             className="footer-admin"
+            tabindex="0"
             onClick={() => {
               this.setState({ visible: true });
             }}

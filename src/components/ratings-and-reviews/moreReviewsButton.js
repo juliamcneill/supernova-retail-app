@@ -5,6 +5,7 @@ const MoreReviewsButton = ({ showMoreReviews }) => {
     <button
       className="main-action-button review-button"
       onClick={showMoreReviews}
+      tabindex="0"
     >
       More Reviews
     </button>

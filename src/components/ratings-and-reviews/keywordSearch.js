@@ -33,8 +33,10 @@ class KeywordSearch extends React.Component {
           type="search"
           name="search"
           placeholder="SEARCH..."
+          title="Search for reviews"
           maxLength={60}
           value={this.state.search}
+          tabindex="0"
           onChange={(e) => {
             this.handleChange(e);
           }}

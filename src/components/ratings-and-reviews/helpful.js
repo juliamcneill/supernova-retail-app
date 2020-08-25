@@ -45,6 +45,7 @@ const Helpful = (props) => {
             handleClick(props.id, props.widget);
           }}
           className="helpful"
+          tabindex="0"
         >
           Helpful? Yes ({props.helpfulCount})
         </a>

@@ -171,6 +171,7 @@ class TextContainer extends React.Component {
                   style={{
                     backgroundImage: `url(${style.photos[0].thumbnail_url})`,
                   }}
+                  tabindex="0"
                   onClick={() => this.props.updateSelectedStyle(index)}
                 >
                   {this.props.selectedStyle === style ? (
@@ -186,7 +187,7 @@ class TextContainer extends React.Component {
             : null}
         </div>
         <div className="main-action-dropdown">
-          <span className="main-action-button" id="size-selector">
+          <span className="main-action-button" id="size-selector" tabindex="0">
             {this.state.currentlySelectedSize}
             <span className="main-action-button-symbol main-action-button-symbol-floated">
               <FiChevronDown />
@@ -213,7 +214,11 @@ class TextContainer extends React.Component {
           </span>
         </div>
         <div className="main-action-dropdown">
-          <span className="main-action-button" id="quantity-selector">
+          <span
+            className="main-action-button"
+            id="quantity-selector"
+            tabindex="0"
+          >
             {this.state.currentlySelectedQuantity}
             <span className="main-action-button-symbol main-action-button-symbol-floated">
               <FiChevronDown />
@@ -252,6 +257,7 @@ class TextContainer extends React.Component {
         <span
           className="main-action-button"
           id="add-to-bag-button"
+          tabindex="0"
           onClick={(event) => this.handleAddToBag(event)}
         >
           {this.state.bagMessage}
@@ -262,6 +268,7 @@ class TextContainer extends React.Component {
         <span
           className="main-action-button"
           id="favorite-button"
+          tabindex="0"
           onClick={(event) => this.handleFavorite(event)}
         >
           <span className="main-action-button-symbol">

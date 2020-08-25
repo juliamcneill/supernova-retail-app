@@ -130,8 +130,12 @@ class ProductCard extends React.Component {
             requestToChangeActive={(value) =>
               this.setState({ activeItemIndex: value })
             }
-            rightChevron={<FaRegArrowAltCircleRight color="#525252" />}
-            leftChevron={<FaRegArrowAltCircleLeft color="#525252" />}
+            rightChevron={
+              <FaRegArrowAltCircleRight color="#525252" tabindex="0" />
+            }
+            leftChevron={
+              <FaRegArrowAltCircleLeft color="#525252" tabindex="0" />
+            }
           >
             {this.state.cardDetails.map((card, i) => {
               return (
