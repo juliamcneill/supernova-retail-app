@@ -86,6 +86,7 @@ class ReviewTile extends React.Component {
                     className="review-photo"
                     key={photo.id}
                     src={photo.url}
+                    alt="Attached image from user who posted review"
                     value={photo.url}
                     onClick={this.handleImgClick}
                   />
@@ -99,7 +100,11 @@ class ReviewTile extends React.Component {
             >
               <Modal.Header closeButton />
               <Modal.Body>
-                <img src={this.state.imageUrl} class="img-fluid"></img>
+                <img
+                  src={this.state.imageUrl}
+                  alt="Attached image from user who posted review"
+                  class="img-fluid"
+                ></img>
               </Modal.Body>
             </Modal>
             <p>

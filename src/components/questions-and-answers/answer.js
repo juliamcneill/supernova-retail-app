@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import apiMaster from '../../apiMaster';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import moment from 'moment';
+import React, { useState, useEffect } from "react";
+import apiMaster from "../../apiMaster";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import moment from "moment";
 import Helpful from ".././ratings-and-reviews/helpful.js";
 import Report from ".././ratings-and-reviews/report.js";
 
@@ -26,9 +26,9 @@ const Answer = (props) => {
     <>
       <>
         {answers.slice(0, answerLen).map((answer) => {
-          let date = moment(answer.date).format('MMMM D, YYYY');
+          let date = moment(answer.date).format("MMMM D, YYYY");
           let by;
-          answer.answerer_name === 'Seller'
+          answer.answerer_name === "Seller"
             ? (by = <b>{answer.answerer_name}</b>)
             : (by = answer.answerer_name);
 
@@ -36,20 +36,25 @@ const Answer = (props) => {
             <Card.Body key={answer.answer_id}>
               <Card.Title>A: {answer.body}</Card.Title>
               {answer.photos.map((image) => {
+                console.log(image);
                 return (
                   <img
-                    key={image.url}
-                    src="https://images.unsplash.com/photo-1529088148495-2d9f231db829?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
-                    style={{ maxHeight: '100px', maxWidth: '100px' }}
+                    src={image.url}
+                    alt="Attached image from user who posted answer"
+                    style={{ maxHeight: "100px", maxWidth: "100px" }}
                   />
                 );
               })}
               <Card.Text>
-              <div className='helpful-wrapper'>
-                By: {by}, {date} | 
-                <Helpful id={answer.answer_id} widget='answer' helpfulCount={answer.helpfulness}/>
-                |<Report id={answer.answer_id} widget='answer'/>
-              </div>
+                <div className="helpful-wrapper">
+                  By: {by}, {date} |
+                  <Helpful
+                    id={answer.answer_id}
+                    widget="answer"
+                    helpfulCount={answer.helpfulness}
+                  />
+                  |<Report id={answer.answer_id} widget="answer" />
+                </div>
               </Card.Text>
             </Card.Body>
           );
@@ -71,7 +76,7 @@ const Answer = (props) => {
           </Button>
         </Card.Body>
       ) : (
-        ''
+        ""
       )}
 
       {showCollapse ? (
@@ -90,7 +95,7 @@ const Answer = (props) => {
           </Button>
         </Card.Body>
       ) : (
-        ''
+        ""
       )}
     </>
   );

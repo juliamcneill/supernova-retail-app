@@ -13,11 +13,9 @@ class UploadPhotos extends React.Component {
   handleChange(e) {
     let temp = this.state.images;
     temp.push(URL.createObjectURL(e.target.files[0]));
-    this.setState(
-      {
-        images: temp,
-      }
-    );
+    this.setState({
+      images: temp,
+    });
   }
 
   handleUpload(e) {
@@ -50,6 +48,7 @@ class UploadPhotos extends React.Component {
                   <>
                     <img
                       src={`${this.state.images[i]}`}
+                      alt="Image you have attached to review"
                       className="review-photo"
                     />
                     <br />

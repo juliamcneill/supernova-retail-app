@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
+import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
 
 const UplaodPhoto = (props) => {
   const [files, setFiles] = useState([]);
@@ -14,11 +14,12 @@ const UplaodPhoto = (props) => {
           return (
             <img
               src={images[i]}
+              alt="Image you have attached to answer"
               key={images[i]}
-              style={{ maxHeight: '100px', maxWidth: '100px' }}
+              style={{ maxHeight: "100px", maxWidth: "100px" }}
               onClick={() => {
                 let newarr = [...images];
-                newarr[i] = '';
+                newarr[i] = "";
                 setImages(newarr);
               }}
             />
@@ -43,7 +44,7 @@ const UplaodPhoto = (props) => {
           }}
         />
       ) : (
-        ''
+        ""
       )}
     </>
   );

@@ -236,6 +236,7 @@ class PhotoContainer extends React.Component {
             src={
               this.props.selectedStyle.photos[this.state.selectedPhotoIndex].url
             }
+            alt="Selected product"
             style={
               this.state.photoContainerWidth === "photo-container-zoom" &&
               this.state.mouseCoordinates

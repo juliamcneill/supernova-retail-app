@@ -204,6 +204,7 @@ class YourOutfit extends React.Component {
                       <img
                         className="card-img-top"
                         src={this.state.cardImages[i]}
+                        alt="Related product"
                       />
                       <AiOutlineClose
                         className="action-button-outfit"

@@ -1,12 +1,12 @@
-import React from 'react';
-import apiMaster from '../../apiMaster';
-import CardStars from './cardStars';
-import ItemsCarousel from 'react-items-carousel';
+import React from "react";
+import apiMaster from "../../apiMaster";
+import CardStars from "./cardStars";
+import ItemsCarousel from "react-items-carousel";
 import {
   FaRegArrowAltCircleLeft,
   FaRegArrowAltCircleRight,
-} from 'react-icons/fa';
-import CardActionButton from './cardActionButton';
+} from "react-icons/fa";
+import CardActionButton from "./cardActionButton";
 
 class ProductCard extends React.Component {
   constructor(props) {
@@ -69,7 +69,7 @@ class ProductCard extends React.Component {
           .then(
             (res) =>
               res.data.results[0].photos[0].thumbnail_url ||
-              'https://images.unsplash.com/photo-1529088148495-2d9f231db829?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80'
+              "https://images.unsplash.com/photo-1529088148495-2d9f231db829?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80"
           )
           .catch((err) => {
             console.log(err);
@@ -117,7 +117,7 @@ class ProductCard extends React.Component {
           <ItemsCarousel
             infiniteLoop={false}
             gutter={20}
-            activePosition={'center'}
+            activePosition={"center"}
             chevronWidth={60}
             disableSwipe={false}
             alwaysShowChevns={false}
@@ -140,6 +140,7 @@ class ProductCard extends React.Component {
                     <img
                       className="card-img-top"
                       src={this.state.cardImages[i]}
+                      alt="Related product"
                     />
                     <CardActionButton
                       currentProductFeatures={this.props.currentProductFeatures}
@@ -162,25 +163,25 @@ class ProductCard extends React.Component {
                     </div>
                     <span
                       className={
-                        this.state.cardPrices[i].sale_price === '0'
-                          ? 'discounted-price-hidden'
-                          : ''
+                        this.state.cardPrices[i].sale_price === "0"
+                          ? "discounted-price-hidden"
+                          : ""
                       }
                       style={
                         ({
                           textDecoration:
-                            this.state.cardPrices[i].sale_price !== '0'
-                              ? 'line-through'
-                              : 'none',
+                            this.state.cardPrices[i].sale_price !== "0"
+                              ? "line-through"
+                              : "none",
                         },
-                        { color: 'red' })
+                        { color: "red" })
                       }
                     >
                       {Number(
                         this.state.cardPrices[i].sale_price
-                      ).toLocaleString('en-US', {
-                        style: 'currency',
-                        currency: 'USD',
+                      ).toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "USD",
                         minimumFractionDigits: 0,
                         maximumFractionDigits: 0,
                       })}
@@ -189,16 +190,16 @@ class ProductCard extends React.Component {
                       className="main-price-display"
                       style={{
                         textDecoration:
-                          this.state.cardPrices[i].sale_price !== '0'
-                            ? 'line-through'
-                            : 'none',
+                          this.state.cardPrices[i].sale_price !== "0"
+                            ? "line-through"
+                            : "none",
                       }}
                     >
                       {Number(
                         this.state.cardPrices[i].original_price
-                      ).toLocaleString('en-US', {
-                        style: 'currency',
-                        currency: 'USD',
+                      ).toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "USD",
                         minimumFractionDigits: 0,
                         maximumFractionDigits: 0,
                       })}
