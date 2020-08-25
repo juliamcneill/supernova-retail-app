@@ -8,7 +8,7 @@ const SearchQuestion = (props) => {
 
   return (
     <Form.Group controlId="search-form">
-      <Form.Label>Search for questions</Form.Label>
+      <Form.Label class="hidden">Search for questions</Form.Label>
       <Form.Control
         type="search"
         name="search"

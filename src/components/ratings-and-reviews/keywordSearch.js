@@ -28,7 +28,7 @@ class KeywordSearch extends React.Component {
   render() {
     return (
       <Form.Group controlId="search">
-        <Form.Label>Search for reviews</Form.Label>
+        <Form.Label class="hidden">Search for reviews</Form.Label>
         <Form.Control
           type="search"
           name="search"
