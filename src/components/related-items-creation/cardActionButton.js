@@ -80,6 +80,7 @@ class CardActionButton extends React.Component {
         <a
           className="action-button"
           href="javascript:void(0);"
+          aria-label="Star to favorite item"
           onClick={this.handleClick}
         >
           <AiFillStar />

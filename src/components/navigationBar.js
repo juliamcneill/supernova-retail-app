@@ -23,6 +23,7 @@ class NavigationBar extends React.Component {
       <div id="nav-bar">
         <span id="logo">Supernova</span>
         <span id="main-search">
+          <label for="search-bar">Search the entire site</label>
           <input
             type="text"
             name="search"

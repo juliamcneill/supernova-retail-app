@@ -28,21 +28,24 @@ const UplaodPhoto = (props) => {
       </div>
       <br></br>
       {images.length < 5 ? (
-        <input
-          id="custom-file"
-          type="file"
-          accept="image/*"
-          name="Add Photo"
-          onChange={(e) => {
-            let newArr = [...files];
-            newArr.push = e.target.files[0];
-            setFiles(newArr);
-            let imagesArr = [...images];
-            imagesArr.push(URL.createObjectURL(e.target.files[0]));
-            setImages(imagesArr);
-            props.setPhoto(imagesArr);
-          }}
-        />
+        <div>
+          <label for="custom-file">Attach images to answer</label>
+          <input
+            id="custom-file"
+            type="file"
+            accept="image/*"
+            name="Add Photo"
+            onChange={(e) => {
+              let newArr = [...files];
+              newArr.push = e.target.files[0];
+              setFiles(newArr);
+              let imagesArr = [...images];
+              imagesArr.push(URL.createObjectURL(e.target.files[0]));
+              setImages(imagesArr);
+              props.setPhoto(imagesArr);
+            }}
+          />
+        </div>
       ) : (
         ""
       )}

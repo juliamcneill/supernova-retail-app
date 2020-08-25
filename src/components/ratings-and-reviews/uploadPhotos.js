@@ -54,13 +54,16 @@ class UploadPhotos extends React.Component {
                     <br />
                   </>
                 ) : (
-                  <input
-                    type="file"
-                    id={i}
-                    name="photos"
-                    onChange={this.handleChange}
-                    accept="image/png, image/jpeg, image/jpg"
-                  />
+                  <div>
+                    <label for={i}>Attach image to review</label>
+                    <input
+                      type="file"
+                      id={i}
+                      name="photos"
+                      onChange={this.handleChange}
+                      accept="image/png, image/jpeg, image/jpg"
+                    />
+                  </div>
                 );
               })}
             </label>
