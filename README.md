@@ -4,9 +4,9 @@ Supernova Retail Client is a retail React application that allows a user to easi
 
 ## Features
 
-▪ SASS styling for consistently styling across components.
-▪ Custom slideshow, zoom, and pagination features.
-▪ Extensive accessibility and testing coverage using auditing tools, Jest, and Enzyme.
+- SASS styling for consistently styling across components.
+- Custom slideshow, zoom, and pagination features.
+- Extensive accessibility and testing coverage using auditing tools, Jest, and Enzyme.
 
 ## Tech Stack
 
