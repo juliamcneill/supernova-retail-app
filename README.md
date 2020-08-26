@@ -8,14 +8,10 @@ Supernova Retail Client is a retail React application that allows a user to easi
 - SASS variables for consistent styling across components.
 - Extensive accessibility and testing coverage using auditing tools, Jest, and Enzyme.
 
-## Tech Stack
+## Tech Stack Contributed
 
 - React
-- react-router
-- Recoil
-- React Bootstrap
-- Moment.js
-- url-loader
+- Sass
 - Webpack
 - Babel
 - Jest
@@ -24,4 +20,4 @@ Supernova Retail Client is a retail React application that allows a user to easi
 
 ## Team
 
-Julia McNeill, Shannon Connolly, Chris Campos, and Henry Wang
+Julia McNeill, [Chris Campos](https://github.com/cam1403), [Shannon Connolly](https://github.com/sconnoll), and [Henry Wang](https://github.com/HiHenryW)
