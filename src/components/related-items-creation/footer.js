@@ -86,7 +86,7 @@ class Footer extends React.Component {
         <div>
           <span
             className="footer-admin"
-            tabindex="0"
+            tabIndex="0"
             onClick={() => {
               this.setState({ visible: true });
             }}

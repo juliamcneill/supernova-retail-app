@@ -11,7 +11,7 @@ const AlertBar = (props) => {
         <strong> 50% OFF ALL DRESSES AND SHORTS</strong>
       </span>
       &mdash;
-      <span className="alert-bar-message" tabindex="0">
+      <span className="alert-bar-message" tabIndex="0">
         <u>CHECK OUT THE NEW YEASY 350S</u>
       </span>
     </div>

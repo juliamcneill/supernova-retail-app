@@ -267,7 +267,7 @@ class PhotoContainer extends React.Component {
                   style={{
                     backgroundImage: `url(${item[0].thumbnail_url})`,
                   }}
-                  tabindex="0"
+                  tabIndex="0"
                   onClick={() => this.handleIconClick(item[1])}
                 >
                   {this.state.selectedPhotoIndex === item[1] ? (
@@ -279,7 +279,7 @@ class PhotoContainer extends React.Component {
         </div>
         <span
           id="product-photo-expand"
-          tabindex="0"
+          tabIndex="0"
           onClick={(event) => this.handleProductPhotoExpand(event)}
         >
           <FaExpand />
@@ -287,7 +287,7 @@ class PhotoContainer extends React.Component {
         <span
           className="photo-selector-arrows"
           id="left-arrow"
-          tabindex="0"
+          tabIndex="0"
           onClick={(event) => this.handleLeftArrowClick(event)}
         >
           <FaArrowLeft />
@@ -295,7 +295,7 @@ class PhotoContainer extends React.Component {
         <span
           className="photo-selector-arrows"
           id="right-arrow"
-          tabindex="0"
+          tabIndex="0"
           onClick={(event) => this.handleRightArrowClick(event)}
         >
           <FaArrowRight />
@@ -306,7 +306,7 @@ class PhotoContainer extends React.Component {
           <span
             className="photo-selector-chevrons"
             id="up-chevron"
-            tabindex="0"
+            tabIndex="0"
             onClick={(event) => this.handleUpChevronClick(event)}
           >
             <FiChevronUp />
@@ -316,9 +316,8 @@ class PhotoContainer extends React.Component {
         this.props.selectedStyle.photos.length > 7 &&
         this.state.moreIconsDown === true ? (
           <span
-            className="photo-selector-chevrons"
             id="down-chevron"
-            tabindex="0"
+            tabIndex="0"
             onClick={(event) => this.handleDownChevronClick(event)}
           >
             <FiChevronDown />

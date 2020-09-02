@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
+import { Jumbotron } from "react-bootstrap";
 
 class UploadPhotos extends React.Component {
   constructor(props) {
@@ -44,15 +45,15 @@ class UploadPhotos extends React.Component {
             <label className="label-container" htmlFor="photo">
               Choose up to 5 photos: <br />
               {["1", "2", "3", "4", "5"].map((item, i) => {
-                return this.state.images.length >= item ? (
-                  <>
+                this.state.images.length >= item ? (
+                  <div>
                     <img
                       src={`${this.state.images[i]}`}
                       alt="Image you have attached to review"
                       className="review-photo"
                     />
                     <br />
-                  </>
+                  </div>
                 ) : (
                   <div>
                     <label for={i}>Attach image to review</label>

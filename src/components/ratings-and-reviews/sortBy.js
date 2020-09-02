@@ -33,7 +33,7 @@ class SortBy extends React.Component {
           name="sort"
           id="sort-by"
           className="main-action-button"
-          tabindex="0"
+          tabIndex="0"
         >
           <option value="relevant">Relevance</option>
           <option value="helpful">Helpfulness</option>

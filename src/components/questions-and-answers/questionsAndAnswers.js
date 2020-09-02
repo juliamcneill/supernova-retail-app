@@ -44,7 +44,7 @@ const QuestionsAndAnswers = (props) => {
         <Button
           variant="success"
           className="qa-button"
-          tabindex="0"
+          tabIndex="0"
           onClick={() => {
             setAddQuestionModal(true);
           }}

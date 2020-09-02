@@ -44,14 +44,14 @@ const QuestionDisplay = (props) => {
                   Q: {question.question_body}{" "}
                   <div style={{ float: "right" }}>
                     Helpful?{" "}
-                    <u style={{ cursor: "pointer" }} tabindex="0">
+                    <u style={{ cursor: "pointer" }} tabIndex="0">
                       {" "}
                       YES
                     </u>{" "}
                     ({question.question_helpfulness}) |
                     <u
                       style={{ cursor: "pointer" }}
-                      tabindex="0"
+                      tabIndex="0"
                       onClick={() => {
                         setq(question.question_body);
                         setquestionID(question.question_id);
@@ -86,7 +86,7 @@ const QuestionDisplay = (props) => {
                   />
                   <u
                     style={{ cursor: "pointer" }}
-                    tabindex="0"
+                    tabIndex="0"
                     onClick={() => {
                       setq(question.question_body);
                       setquestionID(question.question_id);

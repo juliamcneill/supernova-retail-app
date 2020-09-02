@@ -45,7 +45,7 @@ const Report = (props) => {
             handleClick(props.id, props.widget);
           }}
           className="report"
-          tabindex="0"
+          tabIndex="0"
         >
           Report
         </a>

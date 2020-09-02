@@ -21,7 +21,7 @@ class NavigationBar extends React.Component {
   render() {
     return (
       <div id="nav-bar">
-        <span id="logo" tabindex="0">
+        <span id="logo" tabIndex="0">
           Supernova
         </span>
         <span id="main-search">
@@ -33,11 +33,11 @@ class NavigationBar extends React.Component {
             name="search"
             id="search-bar"
             title="Search the entire site"
-            tabindex="0"
+            tabIndex="0"
             value={this.state.search}
             onChange={(event) => this.handleFormChange(event)}
           ></input>
-          <span type="submit" className="search-icon" tabindex="0">
+          <span type="submit" className="search-icon" tabIndex="0">
             <FaSearch />
           </span>
         </span>

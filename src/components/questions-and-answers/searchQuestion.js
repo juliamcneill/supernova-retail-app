@@ -16,7 +16,7 @@ const SearchQuestion = (props) => {
         title="Search for questions"
         maxLength={60}
         value={search}
-        tabindex="0"
+        tabIndex="0"
         onChange={(e) => {
           setSearch(e.target.value);
         }}

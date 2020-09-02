@@ -151,43 +151,46 @@ class TextContainer extends React.Component {
             )}
           </div>
         ) : null}
-        <div
-          id={
-            this.props.styles.length <= 8
-              ? "styles-menu-4-across"
-              : "styles-menu-5-across"
-          }
-        >
-          <div id="styles-menu-heading">
-            <strong>STYLE ></strong>
-            {this.props.selectedStyle != undefined ? (
-              <span> {this.props.selectedStyle.name}</span>
-            ) : null}
-          </div>
-          {this.props.styles !== [] && this.props.styles != undefined
-            ? this.props.styles.map((style, index) => (
-                <div
-                  className="product-style-icon"
-                  style={{
-                    backgroundImage: `url(${style.photos[0].thumbnail_url})`,
-                  }}
-                  tabindex="0"
-                  onClick={() => this.props.updateSelectedStyle(index)}
-                >
-                  {this.props.selectedStyle === style ? (
-                    <span>
-                      <span id="selected-style-checkmark-frame"></span>
-                      <span id="selected-style-checkmark">
-                        <GrFormCheckmark />
+        {this.props.styles != undefined ? (
+          <div
+            id={
+              this.props.styles.length <= 8
+                ? "styles-menu-4-across"
+                : "styles-menu-5-across"
+            }
+          >
+            <div id="styles-menu-heading">
+              <strong>STYLE &gt;</strong>
+              {this.props.selectedStyle != undefined ? (
+                <span> {this.props.selectedStyle.name}</span>
+              ) : null}
+            </div>
+            {this.props.styles !== [] && this.props.styles != undefined
+              ? this.props.styles.map((style, index) => (
+                  <div
+                    className="product-style-icon"
+                    style={{
+                      backgroundImage: `url(${style.photos[0].thumbnail_url})`,
+                    }}
+                    tabIndex="0"
+                    onClick={() => this.props.updateSelectedStyle(index)}
+                  >
+                    {this.props.selectedStyle === style ? (
+                      <span>
+                        <span id="selected-style-checkmark-frame"></span>
+                        <span id="selected-style-checkmark">
+                          <GrFormCheckmark />
+                        </span>
                       </span>
-                    </span>
-                  ) : null}
-                </div>
-              ))
-            : null}
-        </div>
+                    ) : null}
+                  </div>
+                ))
+              : null}
+          </div>
+        ) : null}
+
         <div className="main-action-dropdown">
-          <span className="main-action-button" id="size-selector" tabindex="0">
+          <span className="main-action-button" id="size-selector" tabIndex="0">
             {this.state.currentlySelectedSize}
             <span className="main-action-button-symbol main-action-button-symbol-floated">
               <FiChevronDown />
@@ -217,7 +220,7 @@ class TextContainer extends React.Component {
           <span
             className="main-action-button"
             id="quantity-selector"
-            tabindex="0"
+            tabIndex="0"
           >
             {this.state.currentlySelectedQuantity}
             <span className="main-action-button-symbol main-action-button-symbol-floated">
@@ -257,7 +260,7 @@ class TextContainer extends React.Component {
         <span
           className="main-action-button"
           id="add-to-bag-button"
-          tabindex="0"
+          tabIndex="0"
           onClick={(event) => this.handleAddToBag(event)}
         >
           {this.state.bagMessage}
@@ -268,7 +271,7 @@ class TextContainer extends React.Component {
         <span
           className="main-action-button"
           id="favorite-button"
-          tabindex="0"
+          tabIndex="0"
           onClick={(event) => this.handleFavorite(event)}
         >
           <span className="main-action-button-symbol">
