@@ -237,6 +237,7 @@ class PhotoContainer extends React.Component {
               this.props.selectedStyle.photos[this.state.selectedPhotoIndex].url
             }
             alt="Selected product"
+            data-testid="mainProductPhoto"
             style={
               this.state.photoContainerWidth === "photo-container-zoom" &&
               this.state.mouseCoordinates
@@ -258,7 +259,7 @@ class PhotoContainer extends React.Component {
             onClick={(e) => this.handleImgClick(e)}
           ></img>
         ) : null}
-        <div id="product-photo-icon-container">
+        <div id="product-photo-icon-container" data-testid="productPhotoIcons">
           {this.state.currentPhotoIcons != [] &&
           this.state.currentPhotoIcons != undefined
             ? this.state.currentPhotoIcons.map((item) => (

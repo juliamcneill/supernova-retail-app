@@ -105,15 +105,13 @@ class ProductDetail extends React.Component {
           <span id="product-features" data-testid="productFeatures">
             {this.props.product != undefined &&
             this.props.product.features != undefined
-              ? this.props.product.features.map((item) => {
-                  return (
-                    <div>
-                      <span className="product-features-checkmark">
-                        <GrFormCheckmark />
-                      </span>
-                      <strong>{item.feature}:</strong> {item.value}
-                    </div>
-                  );
+              ? this.props.product.features.map((item, index) => {
+                  <div id={index}>
+                    <span className="product-features-checkmark">
+                      <GrFormCheckmark />
+                    </span>
+                    <strong>{item.feature}:</strong> {item.value}
+                  </div>;
                 })
               : null}
           </span>

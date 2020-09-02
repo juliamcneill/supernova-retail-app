@@ -125,18 +125,18 @@ class TextContainer extends React.Component {
         id="product-detail-text-container"
         className={this.props.textContainerVisibility}
       >
-        <Stars rating={this.props.averageRating} />
+        <Stars rating={this.props.averageRating} data-testid="productStars" />
         <a href="#reviews-ratings-container" id="reviews-link">
           Read all {this.state.reviewsLength} reviews
         </a>
-        <div id="product-category">
+        <div id="product-category" data-testid="productCategory">
           {this.props.product != undefined ? this.props.product.category : null}
         </div>
-        <div id="product-name">
+        <div id="product-name" data-testid="productName">
           {this.props.product != undefined ? this.props.product.name : null}
         </div>
         {this.props.selectedStyle != undefined ? (
-          <div id="product-price">
+          <div id="product-price" data-testid="productPrice">
             {this.props.selectedStyle.sale_price != 0 &&
             this.props.selectedStyle.sale_price !==
               this.props.selectedStyle.original_price ? (
@@ -158,6 +158,7 @@ class TextContainer extends React.Component {
                 ? "styles-menu-4-across"
                 : "styles-menu-5-across"
             }
+            data-testid="productStylesMenu"
           >
             <div id="styles-menu-heading">
               <strong>STYLE &gt;</strong>
@@ -173,6 +174,7 @@ class TextContainer extends React.Component {
                       backgroundImage: `url(${style.photos[0].thumbnail_url})`,
                     }}
                     tabIndex="0"
+                    id={index}
                     onClick={() => this.props.updateSelectedStyle(index)}
                   >
                     {this.props.selectedStyle === style ? (
@@ -189,7 +191,7 @@ class TextContainer extends React.Component {
           </div>
         ) : null}
 
-        <div className="main-action-dropdown">
+        <div className="main-action-dropdown" data-testid="productSizeDropdown">
           <span className="main-action-button" id="size-selector" tabIndex="0">
             {this.state.currentlySelectedSize}
             <span className="main-action-button-symbol main-action-button-symbol-floated">
@@ -216,7 +218,10 @@ class TextContainer extends React.Component {
             </div>
           </span>
         </div>
-        <div className="main-action-dropdown">
+        <div
+          className="main-action-dropdown"
+          data-testid="productQuantityDropdown"
+        >
           <span
             className="main-action-button"
             id="quantity-selector"
@@ -262,6 +267,7 @@ class TextContainer extends React.Component {
           id="add-to-bag-button"
           tabIndex="0"
           onClick={(event) => this.handleAddToBag(event)}
+          data-testid="productAddToBagButton"
         >
           {this.state.bagMessage}
           <span className="main-action-button-symbol main-action-button-symbol-floated">
@@ -273,6 +279,7 @@ class TextContainer extends React.Component {
           id="favorite-button"
           tabIndex="0"
           onClick={(event) => this.handleFavorite(event)}
+          data-testid="productFavoriteButton"
         >
           <span className="main-action-button-symbol">
             {this.state.favoriteIcon}
